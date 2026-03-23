@@ -25,23 +25,23 @@ export function Navbar() {
           <Image src="/kt-butterfly-logo.webp" alt="Katharina Tappe Logo" width={60} height={60} className="object-contain transition-transform group-hover:scale-105" />
           <span className="font-serif text-xl font-bold tracking-wide text-foreground group-hover:text-cta transition-colors">Katharina Tappe</span>
         </Link>
-        <nav className="hidden md:flex gap-8">
+        <nav className="hidden lg:flex gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`text-sm font-medium transition-colors hover:text-cta-hover ${pathname === link.href ? 'text-cta border-b-2 border-cta pb-1' : 'text-foreground'}`}
+              className={`text-sm font-medium transition-all duration-200 hover:text-cta-hover hover:scale-105 ${pathname === link.href ? 'text-cta border-b-2 border-cta pb-1' : 'text-foreground/80 hover:text-cta'}`}
             >
               {link.name}
             </Link>
           ))}
         </nav>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <Link href="/contact">
             <Button>Kontakt aufnehmen</Button>
           </Link>
         </div>
-        <div className="flex md:hidden items-center">
+        <div className="flex lg:hidden items-center">
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             className="text-foreground p-2 rounded-md focus:outline-none"
@@ -58,14 +58,14 @@ export function Navbar() {
       
       {/* Mobile Menu Overlay */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-20 left-0 w-full bg-background border-b border-input-border/30 shadow-lg p-4 flex flex-col gap-4 z-40">
+        <div className="lg:hidden absolute top-20 left-0 w-full bg-background border-b border-input-border/30 shadow-lg p-4 flex flex-col gap-4 z-40">
           <nav className="flex flex-col gap-4 mb-4">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-base font-medium transition-colors hover:text-cta-hover ${pathname === link.href ? 'text-cta font-bold' : 'text-foreground'}`}
+                className={`text-base font-medium transition-colors hover:text-cta-hover ${pathname === link.href ? 'text-cta font-bold underline decoration-2 underline-offset-4' : 'text-foreground'}`}
               >
                 {link.name}
               </Link>

@@ -3,7 +3,7 @@ import nodemailer from 'nodemailer';
 
 export async function POST(req: Request) {
   try {
-    const { name, email, subject, course, message } = await req.json();
+    const { name, email, topic, message } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json(
@@ -49,14 +49,13 @@ export async function POST(req: Request) {
       from: user || '"Katharina Tappe Website" <test@ethereal.email>', // sender address
       to: 'katharina.tappe@gmx.net', // list of receivers (the user's email)
       replyTo: email, // so the client can reply directly to the sender
-      subject: course ? `Anmeldung zu Kurs: ${course} (${name})` : `Neue Kontaktanfrage: ${subject} von ${name}`,
-      text: `Name: ${name}\nE-Mail: ${email}\nInteresse an: ${subject}${course ? `\nKurs: ${course}` : ''}\n\nNachricht:\n${message}`, // plain text body
+      subject: `Anmeldung/Anfrage: ${topic} (${name})`,
+      text: `Name: ${name}\nE-Mail: ${email}\nAnliegen: ${topic}\n\nNachricht:\n${message}`, // plain text body
       html: `
         <h3>Neue Anfrage über die Website</h3>
         <p><strong>Name:</strong> ${name}</p>
         <p><strong>E-Mail:</strong> ${email}</p>
-        <p><strong>Interesse an:</strong> ${subject}</p>
-        ${course ? `<p><strong>Kurs:</strong> ${course}</p>` : ''}
+        <p><strong>Anliegen / Kurs:</strong> ${topic}</p>
         <p><strong>Nachricht:</strong></p>
         <p>${message.replace(/\n/g, '<br>')}</p>
       `, // html body

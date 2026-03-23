@@ -6,20 +6,24 @@ import { Button } from "./Button";
 
 export function ContactForm() {
   const searchParams = useSearchParams();
-  const [subject, setSubject] = useState("Allgemeine Anfrage");
-  const [course, setCourse] = useState("");
+  const [topic, setTopic] = useState("Allgemeine Anfrage");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const subjectParam = searchParams.get("subject");
-    if (subjectParam) {
-      setSubject(subjectParam);
-    }
     const courseParam = searchParams.get("course");
+    const subjectParam = searchParams.get("subject");
+
+    // Map course or subject to our single topic dropdown
     if (courseParam) {
-      setCourse(courseParam);
+      setTopic(courseParam);
+    } else if (subjectParam) {
+      // If only subject is provided, try to find a reasonable default or keep general
+      if (subjectParam === "Lerntherapie") setTopic("Lerntherapie (allgemein)");
+      else if (subjectParam === "Resilienzkurs") setTopic("Resilienzkurs (allgemein)");
+      else if (subjectParam === "Kreativer Workshop") setTopic("Kreativer Workshop (allgemein)");
+      else setTopic(subjectParam);
     }
   }, [searchParams]);
 
@@ -32,8 +36,7 @@ export function ContactForm() {
     const data = {
       name: formData.get("name"),
       email: formData.get("email"),
-      subject: formData.get("subject"),
-      course: formData.get("course"),
+      topic: formData.get("topic"),
       message: formData.get("message"),
     };
 
@@ -93,42 +96,29 @@ export function ContactForm() {
       </div>
       
       <div className="flex flex-col gap-2">
-        <label htmlFor="subject" className="text-sm font-medium text-foreground">Interesse an</label>
+        <label htmlFor="topic" className="text-sm font-medium text-foreground">Anliegen / Kurs</label>
         <select 
-          id="subject" 
-          name="subject"
-          value={subject}
-          onChange={(e) => setSubject(e.target.value)}
+          id="topic" 
+          name="topic"
+          value={topic}
+          onChange={(e) => setTopic(e.target.value)}
           className="h-12 w-full rounded-xl border border-input-border bg-input-bg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cta focus:border-transparent transition-all text-foreground"
         >
-          <option value="Lerntherapie">Lerntherapie</option>
-          <option value="Resilienzkurs">Resilienzkurs</option>
-          <option value="Kreativer Workshop">Kreativer Workshop</option>
           <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
-        </select>
-      </div>
-
-      <div className="flex flex-col gap-2">
-        <label htmlFor="course" className="text-sm font-medium text-foreground">Spezifischer Kurs / Workshop</label>
-        <select 
-          id="course" 
-          name="course"
-          value={course}
-          onChange={(e) => setCourse(e.target.value)}
-          className="h-12 w-full rounded-xl border border-input-border bg-input-bg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cta focus:border-transparent transition-all text-foreground"
-        >
-          <option value="">Bitte wählen (optional)</option>
           <optgroup label="Lerntherapie">
+            <option value="Lerntherapie (allgemein)">Lerntherapie (allgemein)</option>
             <option value="Lese-Rechtschreib-Schwäche (LRS)">Lese-Rechtschreib-Schwäche (LRS)</option>
             <option value="Rechenschwäche (Dyskalkulie)">Rechenschwäche (Dyskalkulie)</option>
             <option value="Lernblockaden & Motivation">Lernblockaden & Motivation</option>
           </optgroup>
           <optgroup label="Resilienzkurse">
+            <option value="Resilienzkurs (allgemein)">Resilienzkurs (allgemein)</option>
             <option value="Stark durch den Alltag (8-10 Jahre)">Stark durch den Alltag (8-10 Jahre)</option>
             <option value="Mindset Matters (11-14 Jahre)">Mindset Matters (11-14 Jahre)</option>
             <option value="Prüfungsangst überwinden">Prüfungsangst überwinden</option>
           </optgroup>
           <optgroup label="Kreative Workshops">
+            <option value="Kreativer Workshop (allgemein)">Kreativer Workshop (allgemein)</option>
             <option value="Farbspiel & Fantasie">Farbspiel & Fantasie</option>
             <option value="Journaling Werkstatt">Journaling Werkstatt</option>
           </optgroup>
