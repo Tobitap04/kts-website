@@ -20,6 +20,7 @@ export async function POST(req: Request) {
     const pass = process.env.EMAIL_PASS?.trim();
 
     if (user && pass) {
+      console.log(`Attempting email send with user: ${user.substring(0, 3)}...${user.split('@')[1]}`);
       // Configuration for GMX
       transporter = nodemailer.createTransport({
         host: 'mail.gmx.net',
