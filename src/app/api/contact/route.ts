@@ -16,15 +16,15 @@ export async function POST(req: Request) {
     let transporter;
 
     // Use environment variables for Production GMX setup
-    const user = process.env.EMAIL_USER;
-    const pass = process.env.EMAIL_PASS;
+    const user = process.env.EMAIL_USER?.trim();
+    const pass = process.env.EMAIL_PASS?.trim();
 
     if (user && pass) {
       // Configuration for GMX
       transporter = nodemailer.createTransport({
         host: 'mail.gmx.net',
-        port: 465,
-        secure: true, // Use SSL
+        port: 587,
+        secure: false, // Use STARTTLS
         auth: {
           user,
           pass,
