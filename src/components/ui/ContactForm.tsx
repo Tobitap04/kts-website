@@ -12,11 +12,14 @@ export function ContactForm() {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    const topicParam = searchParams.get("topic");
     const courseParam = searchParams.get("course");
     const subjectParam = searchParams.get("subject");
 
-    // Map course or subject to our single topic dropdown
-    if (courseParam) {
+    // Map course, subject, or topic to our single topic dropdown
+    if (topicParam) {
+      setTopic(topicParam);
+    } else if (courseParam) {
       setTopic(courseParam);
     } else if (subjectParam) {
       // If only subject is provided, try to find a reasonable default or keep general
@@ -104,8 +107,8 @@ export function ContactForm() {
           onChange={(e) => setTopic(e.target.value)}
           className="h-12 w-full rounded-xl border border-input-border bg-input-bg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cta focus:border-transparent transition-all text-foreground"
         >
-          <option value="Kostenloses Erstgespräch">Kostenloses Erstgespräch</option>
           <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
+          <option value="Kostenloses Erstgespräch">Kostenloses Erstgespräch</option>
           <optgroup label="Lerntherapie">
             <option value="Lerntherapie (allgemein)">Lerntherapie (allgemein)</option>
             <option value="Lese-Rechtschreib-Schwäche (LRS)">Lese-Rechtschreib-Schwäche (LRS)</option>

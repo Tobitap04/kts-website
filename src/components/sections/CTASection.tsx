@@ -11,7 +11,7 @@ export function CTASection() {
         <p className="text-lg mb-10 max-w-2xl mx-auto text-foreground/80 leading-relaxed">
           Lassen Sie uns gemeinsam herausfinden, wie ich Sie oder Ihr Kind bestmöglich unterstützen kann.
         </p>
-        <Link href="/contact">
+        <Link href="/contact?subject=Kostenloses+Erstgespräch">
           <Button size="lg" className="bg-cta text-background hover:bg-cta-hover border-none">
             Kostenloses Erstgespräch anfragen
           </Button>

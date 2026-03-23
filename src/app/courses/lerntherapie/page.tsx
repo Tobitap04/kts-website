@@ -25,7 +25,7 @@ export default function LerntherapiePage() {
           <FadeIn>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">Lerntherapie: Mit Freude lernen</h1>
             <p className="text-lg sm:text-xl text-foreground/80 mb-8">Maßgeschneiderte therapeutische Unterstützung, um Lese-Rechtschreib-Schwäche (LRS), Dyskalkulie und Lernblockaden erfolgreich zu überwinden.</p>
-            <Link href="/contact"><Button size="lg">Kostenloses Erstgespräch</Button></Link>
+            <Link href="/contact?subject=Kostenloses+Erstgespräch"><Button size="lg">Kostenloses Erstgespräch</Button></Link>
           </FadeIn>
           <FadeIn delay={0.2}>
             <div className="relative h-[400px] rounded-2xl overflow-hidden shadow-lg">
@@ -82,7 +82,7 @@ export default function LerntherapiePage() {
             <div className="bg-section-alt rounded-3xl p-10 flex flex-col justify-center items-center text-center shadow-sm h-full">
                <h3 className="font-serif text-2xl font-bold mb-4 text-foreground">Starten Sie jetzt</h3>
                <p className="mb-8 text-foreground/80 text-lg">Ein Erstgespräch ist unverbindlich und kostenlos. Lassen Sie uns gemeinsam den besten Weg finden.</p>
-               <Link href="/contact"><Button size="lg">Termin vereinbaren</Button></Link>
+               <Link href="/contact?subject=Kostenloses+Erstgespräch"><Button size="lg">Termin vereinbaren</Button></Link>
             </div>
           </FadeIn>
         </div>

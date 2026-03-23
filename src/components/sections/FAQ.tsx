@@ -2,7 +2,7 @@ export function FAQ() {
   const faqs = [
     {
       question: "Für welches Alter sind die Kurse geeignet?",
-      answer: "Meine Angebote richten sich an Menschen jeden Alters. Während viele Programme speziell für Kinder und Jugendliche konzipiert sind, biete ich auch individuelle Unterstützung für Erwachsene an."
+      answer: "Meine Angebote richten sich an Menschen jeden Alters. Bis auf die Lerntherapie, die speziell für Kinder und Jugendliche konzipiert ist, sind alle anderen Angebote für jedes Alter geeignet."
     },
     {
       question: "Wie läuft eine Lerntherapie ab?",

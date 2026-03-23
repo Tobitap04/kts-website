@@ -27,9 +27,7 @@ export function TrustSection() {
               Mein Ansatz basiert auf Wertschätzung, individueller Förderung und praxiserprobten Methoden, die Freude und Leichtigkeit in den Alltag zurückbringen.
             </p>
           </div>
-          <Link href="/about">
-            <Button variant="secondary">Mehr über mich erfahren</Button>
-          </Link>
+
         </div>
       </div>
     </section>
