@@ -38,7 +38,7 @@ export function ServicesGrid() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {services.map((service, idx) => (
-            <Card key={idx} className="flex flex-col h-full hover:-translate-y-1 transition-transform duration-300 bg-card">
+            <Card key={idx} className="flex flex-col h-full hover:shadow-lg transition-transform duration-300 bg-card">
               <CardContent className="flex flex-col flex-grow items-start text-left">
                 <div className="p-3 bg-background rounded-xl mb-6 shadow-sm">
                   <service.icon className="w-8 h-8 text-cta" />

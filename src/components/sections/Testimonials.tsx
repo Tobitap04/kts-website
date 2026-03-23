@@ -28,7 +28,7 @@ export function Testimonials() {
               <CardContent>
                 <p className="italic text-lg mb-6 leading-relaxed">"{t.quote}"</p>
                 <div className="font-medium text-cta">{t.name}</div>
-                <div className="text-sm text-secondary">{t.role}</div>
+                <div className="text-base font-medium text-foreground/80 mt-1">{t.role}</div>
               </CardContent>
             </Card>
           ))}

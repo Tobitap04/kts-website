@@ -11,9 +11,9 @@ export const metadata = {
 };
 
 const offerings = [
-  { title: "Lese-Rechtschreib-Schwäche (LRS)", age: "Kinder & Jugendliche", duration: "Individuell", desc: "Strukturierte Förderung zum Aufbau von Lese- und Rechtschreibkompetenzen mit modernen Methoden." },
-  { title: "Rechenschwäche (Dyskalkulie)", age: "Kinder & Jugendliche", duration: "Individuell", desc: "Grundlagen der Mathematik spielerisch und anschaulich erarbeiten für ein sicheres Mengenverständnis." },
-  { title: "Lernblockaden & Prüfungsangst", age: "Kinder & Jugendliche", duration: "Individuell", desc: "Abbau von Prüfungsängsten, Schulfrust und Blockaden durch gezielte therapeutische Interventionen." }
+  { title: "Lese-Rechtschreib-Schwäche (LRS)", age: "Kinder & Jugendliche", duration: "Termin nach Absprache", desc: "Strukturierte Förderung zum Aufbau von Lese- und Rechtschreibkompetenzen mit modernen Methoden." },
+  { title: "Rechenschwäche (Dyskalkulie)", age: "Kinder & Jugendliche", duration: "Termin nach Absprache", desc: "Grundlagen der Mathematik spielerisch und anschaulich erarbeiten für ein sicheres Mengenverständnis." },
+  { title: "Lernblockaden & Prüfungsangst", age: "Kinder & Jugendliche", duration: "Termin nach Absprache", desc: "Abbau von Prüfungsängsten, Schulfrust und Blockaden durch gezielte therapeutische Interventionen." }
 ];
 
 export default function LerntherapiePage() {
@@ -23,8 +23,8 @@ export default function LerntherapiePage() {
       <section className="relative bg-background pt-24 pb-24 border-b border-primary/20">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <FadeIn>
-            <h1 className="font-serif text-5xl font-bold tracking-tight text-foreground mb-6">Lerntherapie: Mit Freude lernen</h1>
-            <p className="text-xl text-foreground/80 mb-8">Maßgeschneiderte therapeutische Unterstützung für Kinder und Jugendliche, um Lese-Rechtschreib-Schwäche (LRS), Dyskalkulie und Lernblockaden erfolgreich zu überwinden.</p>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">Lerntherapie: Mit Freude lernen</h1>
+            <p className="text-lg sm:text-xl text-foreground/80 mb-8">Maßgeschneiderte therapeutische Unterstützung für Kinder und Jugendliche, um Lese-Rechtschreib-Schwäche (LRS), Dyskalkulie und Lernblockaden erfolgreich zu überwinden.</p>
             <Link href="/contact"><Button size="lg">Kostenloses Erstgespräch</Button></Link>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -52,7 +52,7 @@ export default function LerntherapiePage() {
                       <span>{offering.duration}</span>
                     </div>
                     <p className="text-background/90 mb-8 flex-grow leading-relaxed">{offering.desc}</p>
-                    <Link href="/contact" className="mt-auto block">
+                    <Link href="/contact?subject=Lerntherapie" className="mt-auto block">
                       <Button variant="secondary" className="w-full text-foreground bg-background hover:bg-background/90 border-none">Details anfragen</Button>
                     </Link>
                   </CardContent>

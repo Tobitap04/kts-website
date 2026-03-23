@@ -17,6 +17,9 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Katharina Tappe | Lerntherapie & Workshops",
   description: "Professionelle Lerntherapie für Kinder und Jugendliche, Resilienzkurse und kreative Workshops.",
+  icons: {
+    icon: "/kt-butterfly-logo.webp",
+  },
 };
 
 export default function RootLayout({

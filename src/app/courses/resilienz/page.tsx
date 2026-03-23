@@ -22,8 +22,8 @@ export default function ResilienzPage() {
       <section className="relative bg-background pt-24 pb-24 border-b border-primary/20">
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <FadeIn>
-            <h1 className="font-serif text-5xl font-bold tracking-tight text-foreground mb-6">Innere Stärke aufbauen</h1>
-            <p className="text-xl text-foreground/80 mb-8">Unsere Resilienzkurse helfen dabei, mit den Herausforderungen des Alltags gesund umzugehen und echtes Selbstvertrauen zu entwickeln.</p>
+            <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">Innere Stärke aufbauen</h1>
+            <p className="text-lg sm:text-xl text-foreground/80 mb-8">Unsere Resilienzkurse helfen dabei, mit den Herausforderungen des Alltags gesund umzugehen und echtes Selbstvertrauen zu entwickeln.</p>
             <Link href="/contact"><Button size="lg">Kurs anfragen</Button></Link>
           </FadeIn>
           <FadeIn delay={0.2}>
@@ -51,8 +51,8 @@ export default function ResilienzPage() {
                       <span>{offering.duration}</span>
                     </div>
                     <p className="text-background/90 mb-8 flex-grow leading-relaxed">{offering.desc}</p>
-                    <Link href="/contact" className="mt-auto block">
-                      <Button variant="secondary" className="w-full text-foreground bg-background hover:bg-background/90 border-none">Anfragen</Button>
+                    <Link href="/contact?subject=Resilienzkurs" className="mt-auto block">
+                      <Button variant="secondary" className="w-full text-foreground bg-background hover:bg-background/90 border-none">Details anfragen</Button>
                     </Link>
                   </CardContent>
                 </Card>

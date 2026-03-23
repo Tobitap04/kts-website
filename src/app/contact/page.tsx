@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { FadeIn } from "@/components/ui/FadeIn";
 
@@ -19,7 +20,9 @@ export default function ContactPage() {
         
         <FadeIn delay={0.2}>
           <div className="bg-section-alt rounded-3xl p-8 sm:p-12 shadow-sm border border-black/5">
-            <ContactForm />
+            <Suspense fallback={<div className="text-center py-4">Lade Formular...</div>}>
+              <ContactForm />
+            </Suspense>
           </div>
         </FadeIn>
       </div>
