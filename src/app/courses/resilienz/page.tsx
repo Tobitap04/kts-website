@@ -51,7 +51,7 @@ export default function ResilienzPage() {
                       <span>{offering.duration}</span>
                     </div>
                     <p className="text-background/90 mb-8 flex-grow leading-relaxed">{offering.desc}</p>
-                    <Link href="/contact?subject=Resilienzkurs" className="mt-auto block">
+                    <Link href={`/contact?subject=Resilienzkurs&course=${encodeURIComponent(offering.title)}`} className="mt-auto block">
                       <Button variant="secondary" className="w-full text-foreground bg-background hover:bg-background/90 border-none">Details anfragen</Button>
                     </Link>
                   </CardContent>
