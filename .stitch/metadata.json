@@ -1,0 +1,15 @@
+{
+  "name": "projects/15477106689403583852",
+  "projectId": "15477106689403583852",
+  "title": "Katharina Tappe Coaching",
+  "screens": {
+    "landing": {
+      "id": "2f2ad63f68004c12bbed435de9725c1d",
+      "sourceScreen": "projects/15477106689403583852/screens/2f2ad63f68004c12bbed435de9725c1d"
+    },
+    "category": {
+      "id": "4fbf844e0f78470888933996f4f18bcf",
+      "sourceScreen": "projects/15477106689403583852/screens/4fbf844e0f78470888933996f4f18bcf"
+    }
+  }
+}
