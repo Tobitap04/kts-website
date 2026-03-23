@@ -2,7 +2,7 @@ export function FAQ() {
   const faqs = [
     {
       question: "Für welches Alter sind die Kurse geeignet?",
-      answer: "Die meisten Programme richten sich an Kinder und Jugendliche zwischen 8 und 18 Jahren. Je nach Kurs gibt es spezifische Altersgruppen."
+      answer: "Meine Angebote richten sich an Menschen jeden Alters. Während viele Programme speziell für Kinder und Jugendliche konzipiert sind, biete ich auch individuelle Unterstützung für Erwachsene an."
     },
     {
       question: "Wie läuft eine Lerntherapie ab?",

@@ -8,17 +8,24 @@ export function Hero() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
         <div className="max-w-xl">
           <h1 className="font-serif text-4xl sm:text-5xl font-bold tracking-tight text-foreground lg:text-6xl mb-6">
-            Individuelle Begleitung für Kinder und Jugendliche
+            Resilienz, Kreativität & Lerntherapie
           </h1>
           <p className="text-base sm:text-lg text-secondary mb-8 leading-relaxed">
-            Mit Freude und Leichtigkeit zum Ziel. Maßgeschneiderte Strategien, um Prüfungsstress abzubauen und das eigene Potenzial voll zu entfalten.
+            Individuelle Begleitung für Ihre persönliche Weiterentwicklung. Mit maßgeschneiderten Strategien begleite ich Sie dabei, Potenziale zu entfalten und Herausforderungen mit Leichtigkeit zu begegnen.
           </p>
+          <div className="flex flex-wrap gap-4">
+            <Link href="/contact?topic=Kostenloses+Erstgespräch">
+              <Button size="lg" className="bg-cta text-background hover:bg-cta-hover border-none shadow-lg">
+                Kostenloses Erstgespräch anfragen
+              </Button>
+            </Link>
+          </div>
         </div>
         <div className="relative h-[300px] w-full lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-primary/20 z-10 mix-blend-overlay"></div>
           <Image 
             src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop" 
-            alt="Kinder beim intuitiven Lernen" 
+            alt="Persönliche Weiterentwicklung und Begleitung" 
             fill 
             sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover" 

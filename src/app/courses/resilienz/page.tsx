@@ -23,7 +23,7 @@ export default function ResilienzPage() {
         <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <FadeIn>
             <h1 className="font-serif text-4xl sm:text-5xl lg:text-5xl font-bold tracking-tight text-foreground mb-6">Innere Stärke aufbauen</h1>
-            <p className="text-lg sm:text-xl text-foreground/80 mb-8">Unsere Resilienzkurse helfen dabei, mit den Herausforderungen des Alltags gesund umzugehen und echtes Selbstvertrauen zu entwickeln.</p>
+            <p className="text-lg sm:text-xl text-foreground/80 mb-8">Meine Resilienzkurse helfen dabei, mit den Herausforderungen des Alltags gesund umzugehen und echtes Selbstvertrauen zu entwickeln.</p>
             <Link href="/contact"><Button size="lg">Kurs anfragen</Button></Link>
           </FadeIn>
           <FadeIn delay={0.2}>

@@ -21,10 +21,10 @@ export function TrustSection() {
           </h2>
           <div className="text-lg text-secondary space-y-4 mb-8">
             <p>
-              Als erfahrene Lerncoachin und Resilienztrainerin begleite ich Kinder und Jugendliche auf ihrem Weg zu mehr Selbstvertrauen und schulischem Erfolg.
+              Als erfahrene Lerntherapeutin und Resilienztrainerin begleite ich Menschen auf ihrem Weg zu mehr Selbstvertrauen und persönlichem Erfolg.
             </p>
             <p>
-              Mein Ansatz basiert auf Wertschätzung, individueller Förderung und praxiserprobten Methoden, die den Spaß am Lernen zurückbringen.
+              Mein Ansatz basiert auf Wertschätzung, individueller Förderung und praxiserprobten Methoden, die Freude und Leichtigkeit in den Alltag zurückbringen.
             </p>
           </div>
           <Link href="/about">

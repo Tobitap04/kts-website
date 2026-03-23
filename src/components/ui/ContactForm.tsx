@@ -104,6 +104,7 @@ export function ContactForm() {
           onChange={(e) => setTopic(e.target.value)}
           className="h-12 w-full rounded-xl border border-input-border bg-input-bg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-cta focus:border-transparent transition-all text-foreground"
         >
+          <option value="Kostenloses Erstgespräch">Kostenloses Erstgespräch</option>
           <option value="Allgemeine Anfrage">Allgemeine Anfrage</option>
           <optgroup label="Lerntherapie">
             <option value="Lerntherapie (allgemein)">Lerntherapie (allgemein)</option>

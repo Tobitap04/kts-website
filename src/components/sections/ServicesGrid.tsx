@@ -6,7 +6,7 @@ import { Button } from "../ui/Button";
 const services = [
   {
     title: "Lerntherapie",
-    description: "Individuelle therapeutische Strategien exklusiv für Kinder und Jugendliche bei LRS, Dyskalkulie oder Lernblockaden.",
+    description: "Therapeutische Strategien bei Lern- und Leistungsblockaden, LRS oder Rechenschwäche für eine positive Lernentwicklung.",
     icon: BookOpenIcon,
     href: "/courses/lerntherapie"
   },
@@ -33,7 +33,7 @@ export function ServicesGrid() {
             Meine Angebote
           </h2>
           <p className="text-foreground/80 text-lg">
-            Entdecken Sie unsere Programme. Lerntherapie für Kinder und Jugendliche sowie Resilienz- und Kreativworkshops.
+            Entdecken Sie meine Programme. Individuelle Lerntherapie, Resilienztraining und Kreativworkshops für eine ganzheitliche Entwicklung.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

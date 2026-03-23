@@ -9,7 +9,7 @@ export function CTASection() {
           Bereit für den nächsten Schritt?
         </h2>
         <p className="text-lg mb-10 max-w-2xl mx-auto text-foreground/80 leading-relaxed">
-          Lassen Sie uns gemeinsam herausfinden, wie ich Ihr Kind bestmöglich unterstützen kann.
+          Lassen Sie uns gemeinsam herausfinden, wie ich Sie oder Ihr Kind bestmöglich unterstützen kann.
         </p>
         <Link href="/contact">
           <Button size="lg" className="bg-cta text-background hover:bg-cta-hover border-none">

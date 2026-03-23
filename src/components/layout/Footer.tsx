@@ -7,7 +7,7 @@ export function Footer() {
         <div className="md:col-span-2">
           <span className="font-serif text-3xl font-bold block mb-4 text-background">Katharina Tappe</span>
           <p className="opacity-80 max-w-sm text-background mt-4 leading-relaxed">
-            Professionelle Unterstützung für Kinder und Jugendliche. Lerntherapie, Resilienzkurse und kreative Workshops für mehr Leichtigkeit im Alltag.
+            Professionelle Unterstützung für Ihre persönliche Entwicklung. Lerntherapie, Resilienzkurse und kreative Workshops für mehr Leichtigkeit im Alltag.
           </p>
         </div>
         <div className="flex flex-col gap-4">

@@ -31,22 +31,16 @@ export async function POST(req: Request) {
         },
       });
     } else {
-      // Fallback to Ethereal Email for testing if no `.env` is set up yet
-      const testAccount = await nodemailer.createTestAccount();
-      
-      transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-          user: testAccount.user, // generated ethereal user
-          pass: testAccount.pass, // generated ethereal password
-        },
-      });
+      // Fail gracefully in non-prod or missing env vars
+      console.warn('EMAIL_USER or EMAIL_PASS not set. Email not sent.');
+      return NextResponse.json(
+        { message: 'E-Mail-Versand ist derzeit nicht konfiguriert.' },
+        { status: 200 } // Return 200 to not break the UI flow for the user
+      );
     }
 
     const mailOptions = {
-      from: user || '"Katharina Tappe Website" <test@ethereal.email>', // sender address
+      from: user, // sender address
       to: 'katharina.tappe@gmx.net', // list of receivers (the user's email)
       replyTo: email, // so the client can reply directly to the sender
       subject: `Anmeldung/Anfrage: ${topic} (${name})`,
@@ -62,18 +56,8 @@ export async function POST(req: Request) {
     };
 
     // Send the email
-    const info = await transporter.sendMail(mailOptions);
+    await transporter.sendMail(mailOptions);
     
-    // Log the Ethereal URL if we are using the test account
-    const testUrl = nodemailer.getTestMessageUrl(info);
-    if (testUrl) {
-      console.log('Test email sent! Preview URL: %s', testUrl);
-      return NextResponse.json(
-        { message: 'E-Mail (Test) erfolgreich gesendet.', testUrl },
-        { status: 200 }
-      );
-    }
-
     return NextResponse.json(
       { message: 'E-Mail erfolgreich gesendet.' },
       { status: 200 }

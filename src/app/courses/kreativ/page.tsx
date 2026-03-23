@@ -6,7 +6,7 @@ import { FadeIn } from "../../../components/ui/FadeIn";
 
 export const metadata = {
   title: "Kreative Workshops | Katharina Tappe",
-  description: "Raum für kreative Entfaltung ohne Leistungsdruck. Entdecke unsere kreativen Workshops.",
+  description: "Raum für kreative Entfaltung ohne Leistungsdruck. Entdecke meine kreativen Workshops.",
 };
 
 const allOfferings = [
