@@ -6,13 +6,13 @@ export function TrustSection() {
   return (
     <section className="py-24 sm:py-32 bg-background">
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-        <div className="relative h-[500px] w-full rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-xl">
-          <Image 
-            src="/kt-kitchen-portrait.webp" 
-            alt="Katharina Tappe" 
-            fill 
+        <div className="relative h-[600px] w-full rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-xl">
+          <Image
+            src="/kt-kitchen-portrait.webp"
+            alt="Katharina Tappe"
+            fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover"
+            className="object-cover object-top"
           />
         </div>
         <div>
