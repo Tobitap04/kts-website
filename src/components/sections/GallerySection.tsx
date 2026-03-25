@@ -12,19 +12,19 @@ if (typeof window !== "undefined") {
 const images = [
   // Left side - Spread more horizontally and moved down
   {
-    src: "https://images.unsplash.com/photo-1544772711-57da9c7368fa?q=80&w=1200&auto=format&fit=crop",
+    src: "/gallery-1.webp",
     alt: "Kreatives Arbeiten",
     className: "absolute top-[18%] left-[-2%] w-[25vw] max-w-[240px] aspect-[4/5] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none",
     speed: 3.5,
   },
   {
-    src: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?q=80&w=600&auto=format&fit=crop",
+    src: "/gallery-2.webp",
     alt: "Kinder malen",
     className: "absolute top-[8%] right-[22%] w-[20vw] max-w-[200px] aspect-square z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none",
     speed: 2.2,
   },
   {
-    src: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=600&auto=format&fit=crop",
+    src: "/gallery-3.webp",
     alt: "Glückliches Kind",
     className: "absolute top-[22%] right-[2%] w-[22vw] max-w-[220px] aspect-[3/4] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none",
     speed: 4.5,
@@ -32,47 +32,47 @@ const images = [
 
   // Middle Layer (Scattered around)
   {
-    src: "https://images.unsplash.com/photo-1766932901295-d4185660341b?q=80&w=800&auto=format&fit=crop",
-    alt: "Langer Tisch mit vielen Leuten",
+    src: "/gallery-4.webp",
+    alt: "Langer Tisch",
     className: "absolute top-[0%] left-[18%] w-[20vw] max-w-[220px] aspect-[4/3] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none hidden sm:block",
     speed: 1.8,
   },
   {
-    src: "https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=600&auto=format&fit=crop",
-    alt: "Vier Leute + Cafe",
-    className: "absolute top-[40%] right-[15%] w-[18vw] max-w-[190px] aspect-square z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none hidden sm:block",
+    src: "/gallery-5.webp",
+    alt: "Zusammenarbeit",
+    className: "absolute top-[40%] right-[18%] w-[18vw] max-w-[190px] aspect-square z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none hidden sm:block",
     speed: 2.8,
   },
   {
-    src: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?q=80&w=600&auto=format&fit=crop",
-    alt: "Kinder mit Ball",
-    className: "absolute top-[88%] left-[0%] w-[16vw] max-w-[170px] aspect-[4/5] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none hidden sm:block",
+    src: "/gallery-6.webp",
+    alt: "Gemeinsam lernen",
+    className: "absolute top-[88%] left-[3%] w-[16vw] max-w-[170px] aspect-[4/5] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none hidden sm:block",
     speed: 3.2,
   },
 
   // Bottom Layer (Positions near the bottom edge)
   {
-    src: "https://images.unsplash.com/photo-1675917222721-a633aa25c281?q=80&w=1200&auto=format&fit=crop",
-    alt: "Kind beim Malen helfen",
-    className: "absolute bottom-[-5%] left-[8%] w-[24vw] max-w-[260px] aspect-[3/4] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none",
+    src: "/gallery-7.webp",
+    alt: "Individuelle Förderung",
+    className: "absolute bottom-[-5%] left-[10%] w-[24vw] max-w-[260px] aspect-[3/4] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none",
     speed: 4.0,
   },
   {
-    src: "https://images.unsplash.com/photo-1759646828783-7e1b8f02f89b?q=80&w=800&auto=format&fit=crop",
-    alt: "Hände am Topf",
+    src: "/gallery-8.webp",
+    alt: "Handwerkliches",
     className: "absolute bottom-[10%] right-[3%] w-[26vw] max-w-[280px] aspect-[4/3] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none",
     speed: 3.5,
   },
   {
-    src: "https://images.unsplash.com/photo-1513151233558-d860c5398176?q=80&w=600&auto=format&fit=crop",
-    alt: "Konfetti",
+    src: "/gallery-9.webp",
+    alt: "Kreativität",
     className: "absolute bottom-[-22%] right-[18%] w-[18vw] max-w-[200px] aspect-square z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none",
     speed: 5.0,
   },
   {
-    src: "https://images.unsplash.com/photo-1511895426328-dc8714191300?q=80&w=600&auto=format&fit=crop",
-    alt: "Leute vor Sonnenuntergang",
-    className: "absolute bottom-[40%] left-[28%] w-[15vw] max-w-[160px] aspect-[4/5] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none hidden sm:block",
+    src: "/gallery-10.webp",
+    alt: "Glücksmomente",
+    className: "absolute bottom-[45%] left-[28%] w-[15vw] max-w-[160px] aspect-[4/5] z-0 rounded-2xl shadow-2xl parallax-img opacity-90 pointer-events-none hidden sm:block",
     speed: 2.0,
   }
 ];
