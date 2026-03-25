@@ -130,11 +130,11 @@ export function GallerySection() {
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-6 max-w-2xl mx-auto">
         <h2 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-[#FAF7EA]">
-          Einblicke in unsere Kurse
+          Einblicke in meine Kurse
         </h2>
 
         <p className="text-lg md:text-xl text-[#FAF7EA]/80 leading-relaxed max-w-xl">
-          Jeder Kurs ist einzigartig. Entdecke die kreative, stärkende und wertschätzende Atmosphäre unseres Angebots – ein Raum für Wachstum, Freude und Leichtigkeit.
+          Jeder Kurs ist einzigartig. Entdecke die kreative, stärkende und wertschätzende Atmosphäre meines Angebots – ein Raum für Wachstum, Freude und Leichtigkeit.
         </p>
       </div>
     </section>

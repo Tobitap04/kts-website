@@ -24,11 +24,11 @@ export function Hero() {
         <div className="relative h-[300px] w-full lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-primary/20 z-10 mix-blend-overlay"></div>
           <Image 
-            src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=2070&auto=format&fit=crop" 
-            alt="Persönliche Weiterentwicklung und Begleitung" 
+            src="/kt-portrait-kids.webp" 
+            alt="Katharina Tappe mit Kindern beim kreativen Arbeiten" 
             fill 
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover" 
+            className="object-cover object-top" 
             priority
           />
         </div>
