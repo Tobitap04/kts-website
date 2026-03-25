@@ -4,15 +4,15 @@
   --font-sans: var(--font-inter);
   --font-serif: var(--font-playfair);
 
-  --color-background: #F4EAC1;
+  --color-background: #FAF7EA;
   --color-foreground: #464F3D;
   --color-primary: #C1D8AB;
-  --color-section-alt: #EDE3B8;
+  --color-section-alt: #F3F0DE;
   --color-secondary: #90776B;
   --color-card: #9BA079;
 
   --color-cta: #464F3D;
-  --color-cta-text: #F4EAC1;
+  --color-cta-text: #FAF7EA;
   --color-cta-hover: #3A4132;
 
   --color-input-bg: #FFFFFF;
