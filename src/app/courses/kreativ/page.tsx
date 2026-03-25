@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { getUpcomingWorkshops } from "@/lib/calendar";
 import { Button } from "../../../components/ui/Button";
 import { Card, CardContent } from "../../../components/ui/Card";
 import { FadeIn } from "../../../components/ui/FadeIn";
@@ -9,84 +10,10 @@ export const metadata = {
   description: "Raum für kreative Entfaltung ohne Leistungsdruck. Entdecke meine kreativen Workshops.",
 };
 
-function parseICSDate(dateStr: string) {
-  if (!dateStr) return null;
-  if (dateStr.length === 8) {
-    return new Date(`${dateStr.substring(0,4)}-${dateStr.substring(4,6)}-${dateStr.substring(6,8)}T00:00:00Z`);
-  }
-  const match = dateStr.match(/^(\d{4})(\d{2})(\d{2})T(\d{2})(\d{2})(\d{2})(Z)?/);
-  if (match) {
-    const [_, y, m, d, h, min, s, z] = match;
-    return new Date(`${y}-${m}-${d}T${h}:${min}:${s}${z ? 'Z' : ''}`);
-  }
-  return new Date(dateStr);
-}
-
-function parseGoogleICS(icsString: string) {
-  const lines = icsString.split(/\r?\n/);
-  const events = [];
-  let currentEvent: any = null;
-  
-  const unfoldedLines = [];
-  for (const line of lines) {
-    if (line.startsWith(' ') || line.startsWith('\t')) {
-      if (unfoldedLines.length > 0) unfoldedLines[unfoldedLines.length - 1] += line.substring(1);
-    } else {
-      unfoldedLines.push(line);
-    }
-  }
-
-  for (const line of unfoldedLines) {
-    if (line.startsWith('BEGIN:VEVENT')) {
-      currentEvent = {};
-    } else if (line.startsWith('END:VEVENT')) {
-      if (currentEvent && currentEvent.start) events.push(currentEvent);
-      currentEvent = null;
-    } else if (currentEvent) {
-      const match = line.match(/^([^:]+):(.*)$/);
-      if (match) {
-        const [_, key, value] = match;
-        const baseKey = key.split(';')[0];
-        if (baseKey === 'SUMMARY') currentEvent.summary = value.replace(/\\,/g, ',').replace(/\\n/g, '\n');
-        if (baseKey === 'DESCRIPTION') currentEvent.description = value.replace(/\\,/g, ',').replace(/\\n/g, '\n');
-        if (baseKey === 'DTSTART') currentEvent.start = parseICSDate(value);
-        if (baseKey === 'DTEND') currentEvent.end = parseICSDate(value);
-      }
-    }
-  }
-  return events;
-}
-
-export const revalidate = 10;
+export const revalidate = 300;
 
 export default async function KreativPage() {
-  const url = 'https://calendar.google.com/calendar/ical/70516a4506d03c2c96e071e60efcfd523b895f8d31a079a61daff19570defb2d%40group.calendar.google.com/public/basic.ics';
-  
-  let upcomingOfferings = [];
-  try {
-    const res = await fetch(url, { next: { revalidate: 10 } });    const data = await res.text();
-    const events = parseGoogleICS(data);
-    
-    const now = new Date();
-    // Set time to beginning of today to include all events from today
-    const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    
-    for (const ev of events) {
-      if (ev.start && ev.start >= todayStart) {
-        upcomingOfferings.push({
-          title: ev.summary || "Workshop",
-          dateObj: ev.start,
-          dateDisplay: ev.start.toLocaleDateString('de-DE', { day: '2-digit', month: 'long', year: 'numeric' }),
-          duration: `${ev.start.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })} - ${ev.end.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' })} Uhr`,
-          desc: ev.description || ""
-        });
-      }
-    }
-    
-    upcomingOfferings.sort((a, b) => a.dateObj.getTime() - b.dateObj.getTime());
-  } catch (err) {
-    console.error("Error fetching calendar events:", err);
-  }
+  const upcomingOfferings = await getUpcomingWorkshops();
 
   return (
     <div className="flex flex-col">

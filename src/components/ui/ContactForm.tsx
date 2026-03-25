@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
 import { Button } from "./Button";
 
-export function ContactForm() {
+export function ContactForm({ workshopTitles = [] }: { workshopTitles?: string[] }) {
   const searchParams = useSearchParams();
   const [topic, setTopic] = useState("Allgemeine Anfrage");
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -123,8 +123,16 @@ export function ContactForm() {
           </optgroup>
           <optgroup label="Kreative Workshops">
             <option value="Kreativer Workshop (allgemein)">Kreativer Workshop (allgemein)</option>
-            <option value="Farbspiel & Fantasie">Farbspiel & Fantasie</option>
-            <option value="Journaling Werkstatt">Journaling Werkstatt</option>
+            {workshopTitles.length > 0 ? (
+              workshopTitles.map((title) => (
+                <option key={title} value={title}>{title}</option>
+              ))
+            ) : (
+              <>
+                <option value="Farbspiel & Fantasie">Farbspiel & Fantasie</option>
+                <option value="Journaling Werkstatt">Journaling Werkstatt</option>
+              </>
+            )}
           </optgroup>
         </select>
       </div>

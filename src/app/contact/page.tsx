@@ -1,13 +1,19 @@
 import { Suspense } from "react";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { FadeIn } from "@/components/ui/FadeIn";
+import { getUpcomingWorkshops } from "@/lib/calendar";
 
 export const metadata = {
   title: "Kontakt | Katharina Tappe",
   description: "Nehmen Sie Kontakt mit Katharina Tappe auf für ein kostenloses Erstgespräch.",
 };
 
-export default function ContactPage() {
+export const revalidate = 300;
+
+export default async function ContactPage() {
+  const workshops = await getUpcomingWorkshops();
+  const workshopTitles = Array.from(new Set(workshops.map(w => w.title)));
+
   return (
     <div className="flex flex-col flex-grow bg-background py-24 border-t border-primary/10">
       <div className="mx-auto max-w-[800px] w-full px-4 sm:px-6 lg:px-8">
@@ -21,7 +27,7 @@ export default function ContactPage() {
         <FadeIn delay={0.2}>
           <div className="bg-section-alt rounded-3xl p-8 sm:p-12 shadow-sm border border-black/5">
             <Suspense fallback={<div className="text-center py-4">Lade Formular...</div>}>
-              <ContactForm />
+              <ContactForm workshopTitles={workshopTitles} />
             </Suspense>
           </div>
         </FadeIn>
