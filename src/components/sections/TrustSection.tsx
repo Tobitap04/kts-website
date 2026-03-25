@@ -8,7 +8,7 @@ export function TrustSection() {
       <div className="mx-auto max-w-[1200px] px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <div className="relative h-[500px] w-full rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-xl">
           <Image 
-            src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=1974&auto=format&fit=crop" 
+            src="/kt-kitchen-portrait.webp" 
             alt="Katharina Tappe" 
             fill 
             sizes="(max-width: 768px) 100vw, 50vw"
