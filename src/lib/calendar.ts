@@ -56,7 +56,7 @@ function parseGoogleICS(icsString: string): any[] {
 }
 
 export async function getUpcomingWorkshops(): Promise<CalendarEvent[]> {
-  const url = 'https://calendar.google.com/calendar/ical/70516a4506d03c2c96e071e60efcfd523b895f8d31a079a61daff19570defb2d%40group.calendar.google.com/public/basic.ics';
+  const url = 'https://calendar.google.com/calendar/ical/katharina.tappe%40gmx.net/public/basic.ics';
   
   try {
     const res = await fetch(url, { next: { revalidate: 300 } });
