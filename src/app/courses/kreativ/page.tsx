@@ -38,7 +38,7 @@ export default async function KreativPage() {
           <FadeIn>
             <h2 className="font-serif text-3xl font-bold text-center text-foreground mb-16">Kommende Termine</h2>
           </FadeIn>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {upcomingOfferings.length > 0 ? upcomingOfferings.map((offering, idx) => (
               <FadeIn key={idx} delay={0.1 * idx}>
                 <Card className="bg-card text-foreground hover:shadow-lg hover:-translate-y-1 transition-transform duration-300 border-none h-full">
