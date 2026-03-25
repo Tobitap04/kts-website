@@ -57,14 +57,14 @@ function parseGoogleICS(icsString: string) {
   return events;
 }
 
-export const revalidate = 3600;
+export const revalidate = 10;
 
 export default async function KreativPage() {
   const url = 'https://calendar.google.com/calendar/ical/70516a4506d03c2c96e071e60efcfd523b895f8d31a079a61daff19570defb2d%40group.calendar.google.com/public/basic.ics';
   
   let upcomingOfferings = [];
   try {
-    const res = await fetch(url, { next: { revalidate: 3600 } });    const data = await res.text();
+    const res = await fetch(url, { next: { revalidate: 10 } });    const data = await res.text();
     const events = parseGoogleICS(data);
     
     const now = new Date();
